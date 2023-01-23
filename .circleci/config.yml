@@ -8,8 +8,9 @@ jobs:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     parallelism: 4
-      - steps:
-         - run: lscpu
+    - steps:
+        - run: lscpu
+
 workflows:
   version: 2
   Build1:
