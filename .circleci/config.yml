@@ -1,5 +1,6 @@
-# ~/.circleci/config.yml
 version: 2.1
+
+
 jobs:
   test:
     docker:
@@ -8,3 +9,9 @@ jobs:
     steps:
       - run: lscpu
       - run: ls -all
+
+workflows:
+  version: 2
+  Build1:
+     jobs:
+       - test
