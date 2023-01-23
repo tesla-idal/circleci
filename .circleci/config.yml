@@ -3,16 +3,8 @@ version: 2.1
 jobs:
   test:
     docker:
-        - image: cimg/base:2022.11
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+      - image: cimg/base:2022.11
     parallelism: 4
     steps:
       - run: lscpu
-
-workflows:
-  version: 2
-  Build1:
-     jobs:
-       - test
+      - run: ls -all
