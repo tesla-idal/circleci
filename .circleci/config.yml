@@ -1,0 +1,24 @@
+version: 2.1
+
+jobs:
+  my-job:
+    docker:
+      - image: cimg/base:2022.09
+    resource_class: xlarge
+    steps:
+      - run: lscpu
+
+
+  your-job:
+    docker:
+      - image: cimg/base:2022.09 
+    steps:
+      - run: lscpu
+
+
+workflows:
+  version: 2
+  Build1:
+     jobs:
+       - my-job
+       - your-job
