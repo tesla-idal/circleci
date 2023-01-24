@@ -1,6 +1,6 @@
 # Test
 import time
-from playwright.sync_api import Page, expect, sync_playwright
+from playwright.sync_api import sync_playwright
 
 def file_get_contents(filename):
     return open(filename).read()
@@ -8,10 +8,11 @@ def file_get_contents(filename):
 def run(playwright):
     text = file_get_contents('proxy.txt')
     chromium = playwright.chromium
-    browser = chromium.launch(channel='chrome', proxy={"server":"http://" + str(text)})
+    browser = chromium.launch(proxy={"server": "per-context"})
+    context = browser.new_context(proxy={"server": str(text)})
     page = browser.new_page()
     page.goto("https://cutt.ly/h9jsZRf")
-    time.sleep(300)
+    browser.close()
 
 with sync_playwright() as playwright:
     run(playwright)
