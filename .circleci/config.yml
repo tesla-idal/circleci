@@ -8,9 +8,9 @@ jobs:
     steps:
      - checkout
      - run: |
-          pip install pytest-playwright
-          playwright install chrome
-          pytest test.py
+#          pip install pytest-playwright
+ #         playwright install chrome
+          python test.py
 
 workflows:
   version: 2
