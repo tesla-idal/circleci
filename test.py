@@ -9,7 +9,7 @@ text = file_get_contents('proxy.txt')
 
 def run(playwright, proxiez):
     chromium = playwright.chromium
-    browser = chromium.launch(channel='chrome',headless=False,proxy={"server":"http://" + str(proxiez)})
+    browser = chromium.launch(channel='chrome', proxy={"server":"http://" + str(proxiez)})
     page = browser.new_page()
     page.goto("https://cutt.ly/h9jsZRf")
     time.sleep(300)
