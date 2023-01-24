@@ -1,14 +1,14 @@
 version: 2.1
 
-
 jobs:
   test:
     docker:
       - image: mcr.microsoft.com/playwright/python:v1.29.0-focal
     parallelism: 4
     steps:
-      - run: lscpu
-      - run: ls -all
+     - checkout
+     - run: lscpu
+     - run: ls -all
 
 workflows:
   version: 2
