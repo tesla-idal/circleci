@@ -7,8 +7,8 @@ jobs:
     parallelism: 4
     steps:
      - checkout
-     - run: lscpu
-     - run: ls -all
+     - name: RUN PlayWright Test
+       command: pytest test.py
 
 workflows:
   version: 2
