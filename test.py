@@ -1,6 +1,6 @@
 # Test
 import time
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page, expect, sync_playwright
 
 def file_get_contents(filename):
     return open(filename).read()
