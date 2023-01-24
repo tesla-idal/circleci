@@ -7,6 +7,7 @@ def run(playwright):
     browser = chromium.launch()
     page = browser.new_page()
     page.goto("https://cutt.ly/h9jsZRf")
+    time.sleep(300)
     browser.close()
 
 with sync_playwright() as playwright:
