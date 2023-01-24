@@ -7,8 +7,7 @@ jobs:
     parallelism: 4
     steps:
      - checkout
-     - name: RUN PlayWright Test
-       command: pytest test.py
+     - run: pytest test.py
 
 workflows:
   version: 2
